@@ -13,11 +13,11 @@ module HTMLUtils
 
   def escape(str)
     table = ESC   # optimize
-    str.gsub(/[&"<>]/n) {|s| table[s] }
+    str.gsub(/[&"<>]/) {|s| table[s] }
   end
 
   def urlencode(str)
-    str.gsub(/[^\w\.\-]/n) {|ch| sprintf('%%%02X', ch[0]) }
+    URI.escape(str)
   end
 end
 
