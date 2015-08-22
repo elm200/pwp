@@ -1,3 +1,6 @@
+# Originally written by Minero Aoki
+# See http://magazine.rubyist.net/?0010-CodeReview
+
 require 'uri'
 
 module HTMLUtils
@@ -12,7 +15,7 @@ module HTMLUtils
     table = ESC   # optimize
     str.gsub(/[&"<>]/n) {|s| table[s] }
   end
-  
+
   def urlencode(str)
     str.gsub(/[^\w\.\-]/n) {|ch| sprintf('%%%02X', ch[0]) }
   end
