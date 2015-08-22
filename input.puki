@@ -1,6 +1,6 @@
-*Wikiʸˡ
+*Wiki文法
 
-**���Ф�
+**見出し
  *h2
  **h3
  ***h4
@@ -10,7 +10,7 @@
 ***h4
 ****h5
 
-**�ꥹ��
+**リスト
  -list
  -list2
  --list2-1
@@ -20,7 +20,7 @@
 --list2-1
 --list2-2
 
-**�ֹ��դ��ꥹ��
+**番号付きリスト
  +olist
  +olist2
  ++olist2-1
@@ -30,28 +30,28 @@
 ++olist2-1
 ++olist2-2
 
-**����
- >����ʸ
+**引用
+ >引用文
  >example
->����ʸ
+>引用文
 >example
 
 **pre
-Ƭ�˥��ڡ����������
+頭にスペースを入れる
  def takahashi
    'takahashi'
  end
 
-**�����
- :apple|���
- :orange|�����
-:apple|���
-:orange|�����
+**定義語
+ :apple|リンゴ
+ :orange|オランゲ
+:apple|リンゴ
+:orange|オランゲ
 
-**���
+**リンク
  [[example:http://example.com]]
 [[example:http://example.com]]
 
-�ڡ���̾�ˤϼ�ư��󥯤���롣
+ページ名には自動リンクされる。
 
-��:)ʸˡ
+例:)文法
