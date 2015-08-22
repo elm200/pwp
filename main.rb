@@ -1,4 +1,4 @@
-require './pukiwikiparser.rb'
+require './puki_wiki_parser.rb'
 require './dummy_logger.rb'
 
 class Main
