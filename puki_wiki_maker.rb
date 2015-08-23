@@ -5,10 +5,8 @@ end
 class PukiWikiMaker
   def initialize(src)
     @reader = SourceReader.new(src)
-    @parsers = []
-    @parsers.push(EmptyParser.new(@reader))
-    @parsers.push(PreParser.new(@reader))
-    @parsers.push(DefaultParser.new(@reader))
+    @parsers = [EmptyParser, PreParser, DefaultParser]
+               .map { |klass| klass.new(@reader) }
   end
 
   def to_html
