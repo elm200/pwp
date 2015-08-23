@@ -1,0 +1,4 @@
+頭にスペースを入れる
+ def takahashi
+   'takahashi'
+ end

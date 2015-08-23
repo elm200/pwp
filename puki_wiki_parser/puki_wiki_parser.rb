@@ -2,24 +2,7 @@
 # See http://magazine.rubyist.net/?0010-CodeReview
 
 require 'uri'
-
-module HTMLUtils
-  ESC = {
-    '&' => '&amp;',
-    '"' => '&quot;',
-    '<' => '&lt;',
-    '>' => '&gt;'
-  }
-
-  def escape(str)
-    table = ESC   # optimize
-    str.gsub(/[&"<>]/) {|s| table[s] }
-  end
-
-  def urlencode(str)
-    URI.escape(str)
-  end
-end
+require_relative '../lib/html_utils'
 
 class PukiWikiParser
   include HTMLUtils

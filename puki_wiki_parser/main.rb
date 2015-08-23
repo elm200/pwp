@@ -1,5 +1,5 @@
-require './puki_wiki_parser.rb'
-require './dummy_logger.rb'
+require_relative './puki_wiki_parser.rb'
+require_relative './dummy_logger.rb'
 
 class Main
   def parse(body, page_names)
@@ -8,7 +8,7 @@ class Main
   end
 
   def run
-    body = File.read('./input.puki')
+    body = File.read(File.expand_path('../../data/input.puki', __FILE__))
     page_names = ['文法', '自動リンク']
     puts parse(body, page_names)
   end
