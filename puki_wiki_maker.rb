@@ -13,7 +13,13 @@ class PukiWikiMaker
 
   def to_html
     buf = []
-    buf.concat(@parsers.find(&:match?).parse) until @reader.eof?
+    buf.concat(parsed_block) until @reader.eof?
     buf.reject(&:nil?).join("\n")
+  end
+
+  private
+
+  def parsed_block
+    @parsers.find(&:match?).parse
   end
 end
