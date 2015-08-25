@@ -1,3 +1,5 @@
+require 'uri'
+
 module HTMLUtils
   ESC = {
     '&' => '&amp;',
