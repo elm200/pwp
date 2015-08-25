@@ -1,4 +1,4 @@
-Dir[File.expand_path('../lib', __FILE__) << '/*.rb'].each do |file|
+Dir[File.expand_path('.', __FILE__) << '/*.rb'].each do |file|
   require file
 end
 

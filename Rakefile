@@ -1,3 +1,3 @@
 task :spec do
-  system('rspec spec/*_spec.rb')
+  system('rspec spec/lib/*_spec.rb')
 end

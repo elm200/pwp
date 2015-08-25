@@ -1,9 +1,9 @@
-require_relative './spec_helper'
+require_relative '../spec_helper'
 
-describe 'HrParser' do
-  let(:src) { '----' }
+describe 'PreParser' do
   let(:reader) { SourceReader.new(src) }
-  let(:parser) { HrParser.new(reader) }
+  let(:parser) { PreParser.new(reader) }
+  let(:src) { " abc\ndef" }
 
   describe '#initialize' do
     it 'assigns @marker' do
@@ -13,6 +13,7 @@ describe 'HrParser' do
 
   describe '#match?' do
     context 'matched' do
+      let(:src) { " \nb\n" }
       it 'returns truthy if the first line matches @marker' do
         expect(parser.match?).to be_truthy
       end
@@ -27,11 +28,9 @@ describe 'HrParser' do
   end
 
   describe '#parse' do
-    let(:src) { "----\nabc" }
-    let(:lines) { reader.instance_variable_get(:@lines) }
+    let(:src) { " abc\n def\nhij" }
     it 'collects the lines that match @marker' do
-      expect(parser.parse).to eq(%w(<hr />))
-      expect(lines.size).to eq(1)
+      expect(parser.parse).to eq(%W(<pre><code>abc\ndef </code></pre>))
     end
   end
 end

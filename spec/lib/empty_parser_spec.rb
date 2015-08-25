@@ -1,4 +1,4 @@
-require_relative './spec_helper'
+require_relative '../spec_helper'
 
 describe 'EmptyParser' do
   let(:reader) { SourceReader.new(src) }
