@@ -23,4 +23,14 @@ describe 'DefaultParser' do
       expect(parser.parse).to eq(%w(<p> abc def </p>))
     end
   end
+
+  context 'private methods' do
+    describe '#parse_p' do
+      let(:lines) { %w(a>c d<f) }
+      let(:expected) { %w(a&gt;c d&lt;f) }
+      it 'replaces special characters and place holders' do
+        expect(parser.send(:parse_p, lines)).to eq(expected)
+      end
+    end
+  end
 end

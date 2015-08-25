@@ -8,6 +8,6 @@ class HrParser < Parser
 
   def parse
     super
-    %w(<hr />)
+    ['<hr />']
   end
 end

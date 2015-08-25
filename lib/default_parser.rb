@@ -11,10 +11,17 @@ class DefaultParser < Parser
   end
 
   def parse
+    lines = @reader.take_block(@marker)
     buf = []
     buf.push '<p>'
-    buf.concat @reader.take_block(@marker)
+    buf.concat parse_p(lines)
     buf.push '</p>'
     buf
+  end
+
+  private
+
+  def parse_p(lines)
+    lines.map {|line| helper.parse_inline(line) }
   end
 end

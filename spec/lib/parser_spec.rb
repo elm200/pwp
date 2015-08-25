@@ -7,6 +7,8 @@ describe 'Parser' do
   describe '#initialize' do
     it 'assigns @reader' do
       expect(parser.instance_variable_get(:@reader)).not_to be_nil
+      expect(parser.instance_variable_get(:@helper)).not_to be_nil
+      expect(parser.helper).not_to be_nil
     end
   end
 

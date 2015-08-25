@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 
-describe 'PukiWikiMaker' do
-  let(:maker) { PukiWikiMaker.new(src) }
+describe 'PukiWikiProducer' do
+  let(:maker) { PukiWikiProducer.new(src) }
 
   describe '#initialize' do
     let(:src) { '' }
@@ -13,10 +13,10 @@ describe 'PukiWikiMaker' do
   end
 
   describe '#to_html' do
-    let(:src) { " a\n b\n\nc\n" }
-
+    let(:src) { "**x\n----\n a\n b\n\nc\n" }
+    let(:expected) { "<h3>x</h3>\n<hr />\n<pre><code>a\nb\n</code></pre>\n<p>\nc\n</p>" }
     it 'converts the source text to HTML' do
-      expect(maker.to_html).to eq("<pre><code>a\nb\n</code></pre>\n<p>\nc\n</p>")
+      expect(maker.to_html).to eq(expected)
     end
   end
 end

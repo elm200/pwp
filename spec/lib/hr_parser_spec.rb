@@ -30,7 +30,7 @@ describe 'HrParser' do
     let(:src) { "----\nabc" }
     let(:lines) { reader.instance_variable_get(:@lines) }
     it 'collects the lines that match @marker' do
-      expect(parser.parse).to eq(%w(<hr />))
+      expect(parser.parse).to eq(['<hr />'])
       expect(lines.size).to eq(1)
     end
   end
