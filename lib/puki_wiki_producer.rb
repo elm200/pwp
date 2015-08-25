@@ -12,9 +12,8 @@ class PukiWikiProducer
   end
 
   def to_html
-    buf = []
-    buf.concat(parsed_block) until @reader.eof?
-    buf.reject(&:nil?).join("\n")
+    [].tap { |buf| buf.concat(parsed_block) until @reader.eof? }
+      .reject(&:nil?).join("\n")
   end
 
   private
