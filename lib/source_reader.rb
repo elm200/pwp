@@ -1,6 +1,11 @@
 class SourceReader
+
   def initialize(src)
-    @lines = src.rstrip.chomp.split(/\r?\n/)
+    if src.is_a?(Array)
+      @lines = src
+    else
+      @lines = src.rstrip.chomp.split(/\r?\n/)
+    end
   end
 
   def eof?

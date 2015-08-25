@@ -6,9 +6,21 @@ describe 'SourceReader' do
   let(:lines) { reader.instance_variable_get(:@lines) }
 
   describe '#initialize' do
-    it 'assigns @lines' do
-      expect(lines).not_to be_nil
-      expect(lines).to eq(%w(abc def))
+    shared_examples_for 'assigning @lines' do
+      it 'assigns @lines' do
+        expect(lines).to eq(expected)
+      end
+    end
+
+    context 'src is a string' do
+      let(:expected) { %w(abc def) }
+      it_behaves_like 'assigning @lines'
+    end
+
+    context 'src is an array' do
+      let(:src) { %w(abc def) }
+      let(:expected) { %w(abc def) }
+      it_behaves_like 'assigning @lines'
     end
   end
 
