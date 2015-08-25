@@ -22,6 +22,6 @@ class DefaultParser < Parser
   private
 
   def parse_p(lines)
-    lines.map {|line| helper.parse_inline(line) }
+    lines.map { |line| helper.parse_inline(line) }
   end
 end

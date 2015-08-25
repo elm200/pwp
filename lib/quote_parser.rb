@@ -8,6 +8,6 @@ class QuoteParser < Parser
 
   def parse
     lines = @reader.take_block(@marker)
-    [ '<blockquote><p>', lines.join("\n"), '</p></blockquote>']
+    ['<blockquote><p>', lines.join("\n"), '</p></blockquote>']
   end
 end
