@@ -1,5 +1,4 @@
 class SourceReader
-
   def initialize(src)
     if src.is_a?(Array)
       @lines = src

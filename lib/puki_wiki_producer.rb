@@ -5,7 +5,9 @@ end
 class PukiWikiProducer
   def initialize(src)
     @reader = SourceReader.new(src)
-    @parsers = [EmptyParser, HrParser, HParser, PreParser, DefaultParser]
+    @parsers = [EmptyParser, HrParser, HParser, PreParser,
+                QuoteParser, UlParser, OlParser, DlParser,
+                DefaultParser]
                .map { |klass| klass.new(@reader) }
   end
 

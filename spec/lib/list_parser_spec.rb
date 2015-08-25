@@ -63,6 +63,5 @@ describe 'ListParser' do
       let(:expected) { ["<ol>", "<li>a", "<ol>", "<li>b", "</li>", "</ol>", "</li>", "</ol>"] }
       it_behaves_like 'parsing + or - items'
     end
-
   end
 end
