@@ -1,5 +1,5 @@
 # pwp
-PukiWikiMaker
+PukiWikiProducer
 
 Yet another Wiki parser based on PukiWikiParser (http://magazine.rubyist.net/?0010-CodeReview)
 

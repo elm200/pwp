@@ -2,7 +2,7 @@ Dir[File.expand_path('.', __FILE__) << '/*.rb'].each do |file|
   require file
 end
 
-class PukiWikiMaker
+class PukiWikiProducer
   def initialize(src)
     @reader = SourceReader.new(src)
     @parsers = [EmptyParser, HrParser, PreParser, DefaultParser]
